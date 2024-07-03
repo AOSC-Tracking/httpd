@@ -239,6 +239,7 @@ if test "x$PCRE_CONFIG" != "x"; then
   AC_MSG_NOTICE([Using external PCRE library from $PCRE_CONFIG])
   APR_ADDTO(PCRE_INCLUDES, [`$PCRE_CONFIG --cflags`])
   APR_ADDTO(PCRE_LIBS, [`$PCRE_CONFIG --libs8 2>/dev/null || $PCRE_CONFIG --libs`])
+  APR_ADDTO(HTTPD_LIBS, [\$(PCRE_LIBS)])
 else
   AC_MSG_ERROR([pcre(2)-config for libpcre not found. PCRE is required and available from http://pcre.org/])
 fi
@@ -735,6 +736,7 @@ APACHE_SUBST(OS_DIR)
 APACHE_SUBST(BUILTIN_LIBS)
 APACHE_SUBST(SHLIBPATH_VAR)
 APACHE_SUBST(OS_SPECIFIC_VARS)
+APACHE_SUBST(HTTPD_LIBS)
 
 PRE_SHARED_CMDS='echo ""'
 POST_SHARED_CMDS='echo ""'
