@@ -45,8 +45,8 @@ ARGV="$@"
 HTTPD='@exp_sbindir@/@progname@'
 #
 # pick up any necessary environment variables
-if test -f @exp_sbindir@/envvars; then
-  . @exp_sbindir@/envvars
+if test -f @exp_libexecdir@/envvars; then
+  . @exp_libexecdir@/envvars
 fi
 #
 # a command that outputs a formatted text version of the HTML at the

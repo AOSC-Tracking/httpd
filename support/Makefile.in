@@ -30,9 +30,9 @@ install:
 	    fi ; \
 	done
 	@if test -f "$(builddir)/envvars-std"; then \
-	    cp -p envvars-std $(DESTDIR)$(sbindir); \
-	    if test ! -f $(DESTDIR)$(sbindir)/envvars; then \
-	        cp -p envvars-std $(DESTDIR)$(sbindir)/envvars ; \
+	    cp -p envvars-std $(DESTDIR)$(libexecdir); \
+	    if test ! -f $(DESTDIR)$(libexecdir)/envvars; then \
+	        cp -p envvars-std $(DESTDIR)$(libexecdir)/envvars ; \
 	    fi ; \
 	fi
 
